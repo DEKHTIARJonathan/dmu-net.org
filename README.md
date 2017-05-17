@@ -34,8 +34,6 @@ Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunit
 ## Maintainer
 
 * **Lead Developer:** Jonathan DEKHTIAR
-* **Date:** 2017-05-17
-<br/><br/>
 * **Contact:** [contact@jonathandekhtiar.eu](mailto:contact@jonathandekhtiar.eu)
 * **Twitter:** [@born2data](https://twitter.com/born2data)
 * **LinkedIn:** [JonathanDEKHTIAR](https://fr.linkedin.com/in/jonathandekhtiar)
