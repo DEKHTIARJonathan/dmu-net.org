@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
+/* ==========================================================================
+Typography
+========================================================================== */
+p {
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #6c7279;
+}
+h1 {
+    font-size: 65px;
+    color: #2d3033;
+}
+h2 {
+    font-size: 40px;
+    color: #2d3033;
+}
+h3 {
+    font-size: 28px;
+    color: #2d3033;
+    font-weight: 300;
+}
+h4 {
+    font-size: 22px;
+    color: #2d3033;
+    font-weight: 400;
+}
+h5 {
+    font-size: 14px;
+    color: #2d3033;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.btn {
+    background-color: #e84545;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.btn:hover,
+.btn:focus {
+    background-color: #e52e2e;
+    color: #fff;
+}
+.btn-large {
+    padding: 15px 40px;
+}
+/* ==========================================================================
+	General Styles
+========================================================================== */
+
+a {
+    color: #e84545;
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+    -moz-transition: background-color, color, 0.3s;
+    -o-transition: background-color, color, 0.3s;
+    -webkit-transition: background-color, color, 0.3s;
+    transition: background-color, color, 0.3s;
+}
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: #6c7279;
+    padding-top: 70px;
+}
+footer {
+    bottom: 0;
+    width: 100vw;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    text-align: center;
+}
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+.section {
+    padding: 100px 0;
+}
+.no-padding {
+    padding: 0;
+}
+.no-gutter [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.content {
+    min-height: calc(100vh - 70px - 70px); /* 50px : Header, 70px : Footer */
+}
+
+/* ==========================================================================
+	$Banner
+========================================================================== */
+
+.banner {
+    background-color: #ECEFF1;
+    min-height: 750px;
+}
+.banner-text h1 {
+    color: #696969;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.banner-text p {
+    color: #848080;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 80px;
+}
+
+/* ==========================================================================
+	$Customization
+========================================================================== */
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand {
+    font-size: 28px;
+    line-height: 20px;
+    font-weight: 900;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 16px;
+}
+.thumbnail{
+    max-width: 100%;
+    max-height: 100%;
+    border-width:1px;
+    border-style:solid;
+    border-color:blue;
+}
+.part-category:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.scrolling-vert-panel{
+    max-height: calc(100vh - 450px);
+    overflow-y: auto;
+}

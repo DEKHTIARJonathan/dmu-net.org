@@ -1,0 +1,3 @@
+# Add/Remove the sharp sign "#" in front of "Deny from all" to authorize/deny access to the loading data script.
+
+Deny from all
