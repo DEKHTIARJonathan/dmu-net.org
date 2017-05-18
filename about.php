@@ -108,7 +108,7 @@
                     In line with the Open-Source and Open-Research principals, DMU-Net is fully open to contribution via pull-request on our Github Repositories:
                     <ul style="padding-left:40px; font-size: 16px;">
                         <li style="list-style-type:disc; padding-bottom:10px;">Website - Repository: <a href="https://github.com/DEKHTIARJonathan/dmu-net.org" target="_blank">DEKHTIARJonathan/dmu-net.org</a></li>
-                        <li style="list-style-type:disc;">STEP to ThreeJS Converter - Repository: <a href="https://github.com/DEKHTIARJonathan/dmu-net.org" target="_blank">DEKHTIARJonathan/dmu-net.org</a></li>
+                        <li style="list-style-type:disc;">STEP to ThreeJS Converter - Repository: <a href="https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter" target="_blank">DEKHTIARJonathan/dmu-net.org - Branch: STEP-2-ThreeJS-BatchConverter</a></li>
                     </ul>
                 </p>
 
