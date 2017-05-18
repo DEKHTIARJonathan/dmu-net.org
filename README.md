@@ -16,7 +16,7 @@ Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunit
 }
 ```
 
-## Open Source Licence - Creative Commons: 
+## Open Source Licence - Creative Commons:
 
 ### You are free to:
 
@@ -30,7 +30,7 @@ Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunit
 - **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 - **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
  - **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
- 
+
 ## Maintainer
 
 * **Lead Developer:** Jonathan DEKHTIAR
@@ -41,18 +41,12 @@ Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunit
 * **RSS Feed:** [FeedCrunch.io](https://www.feedcrunch.io/@dataradar/)
 * **Tech. Blog:** [born2data.com](http://www.born2data.com/)
 * **Github:** [DEKHTIARJonathan](https://github.com/DEKHTIARJonathan)
-<br/><br/>
 
 ## Contacts
 
 * **Jonathan DEKHTIAR:** [contact@jonathandekhtiar.eu](mailto:contact@jonathandekhtiar.eu)
 * **Alexandre DURUPT:** [alexandre.durupt@utc.fr](mailto:alexandre.durupt@utc.fr)
-* **Matthieu BRICOGNE:** [alexandre.durupt@utc.fr](mailto:matthieu.bricogne@utc.fr)
-* **Benoit EYNARD:** [alexandre.durupt@utc.fr](mailto:benoit.eynard@utc.fr)
+* **Matthieu BRICOGNE:** [matthieu.bricogne@utc.fr](mailto:matthieu.bricogne@utc.fr)
+* **Benoit EYNARD:** [benoit.eynard@utc.fr](mailto:benoit.eynard@utc.fr)
 * **Harvey ROWSON:** [rowson@deltacad.fr](mailto:rowson@deltacad.fr)
 * **Dimitris KIRITSIS:** [dimitris.kiritsis@epfl.ch](mailto:dimitris.kiritsis@epfl.ch)
-<br/><br/>
-
-
-
-
