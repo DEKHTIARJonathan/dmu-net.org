@@ -4,6 +4,12 @@
 
 Official Repository for the website https://www.dmu-net.org
 
+## Project Architecture
+- Branch **[Master](https://github.com/DEKHTIARJonathan/dmu-net.org)**: The DMU-Net website
+- Branch **[STEP-2-ThreeJS-BatchConverter](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter)**: The batch script used to convert STEP Files to ThreeJS readable files.
+
+## Branch Description
+
 This script aims to provide an automated batch script to convert a large number of STEP Files into ThreeJS JSON Files that can be embedded in a website for preview.
 
 The Repository is organised as followed:
