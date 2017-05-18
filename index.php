@@ -16,7 +16,7 @@
 *******************************************************************
 
  2017 May 17
- 
+
  In place of a legal notice, here is a blessing:
 
     May you do good and not evil.
@@ -36,9 +36,6 @@
     header( "Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     require_once "parts/header.php";
 ?>
-    <a href="https://github.com/DEKHTIARJonathan/dmu-net.org" target="_blank">
-        <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
-    </a>
 
     <!-- header -->
     <div class="container content">
@@ -52,9 +49,9 @@
             </div><!-- banner text -->
             <div class="row vertical-align">
                 <div class="col-md-12">
-                
-                    <div class="col-md-6">
-                        
+
+                    <div class="col-md-8">
+
                             <div class="row">
                                 <div class="col-md-12" style="padding-bottom:40px;">
                                     <div class="col-md-4" style="text-align: center;">
@@ -67,7 +64,7 @@
                                         <img src="img/logos/logo_Haut2France.jpg" style="height:70px;">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-12" style="padding-bottom:40px;">
                                     <div class="col-md-4" style="text-align: center;">
                                         <img src="img/logos/logosUTC_SU.png" style="height:70px;">
@@ -79,14 +76,14 @@
                                         <img src="img/logos/DeltaCAD-logo.png" style="height:70px;">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-12" style="text-align:center;">
                                     <a href="/explore.php" class="btn btn-large">Explore the dataset</a>
                                 </div>
-                                
+
                             </div>
                     </div>
-                    
+
                     <div class="col-md-4">
                         <img src='img/engine-banner.png' style="max-width:100%; max-height:100%">
                     </div>
@@ -119,38 +116,6 @@
         </section><!-- citation -->
 
     </div>
-    
-    <!-- Modal Publication -->
-    <div id="publicationOfflineModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">We are sorry, we can't provide you the resource yet ...</h4>
-                </div>
-                <div class="modal-body">
-                    We are sorry, the paper and dataset related to this study are not available yet.<br><br>            
-                    
-                    The preprint version will be available on <a href="https://arxiv.org/" target="_blank">ArXiV.org</a> platform soon.<br>
-                    The final version of this study will be published in <b>open access</b> if it is accepted through peer reviewing.<br><br>
-                    
-                    <b>The dataset can not be downloaded yet</b>, we are currently under an authorisation review process with our legal department.<br><br>
-                    
-                    For any question or request, the authors can be contacted at the following addresses:<br><br>
-                    
-                    <ul style="padding-left:40px;">
-                        <li style="list-style-type:disc;"><a href="mailto:jonathan.dekhtiar@utc.fr" target="_blank">jonathan.dekhtiar@utc.fr</a></li>
-                        <li style="list-style-type:disc;"><a href="mailto:alexandre.durupt@utc.fr" target="_blank">alexandre.durupt@utc.fr</a></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>  
 
     <?php
         require_once "parts/footer.php";
