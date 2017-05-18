@@ -26,7 +26,7 @@ Please follow these steps in order to install the projects dependencies:
 ```shell
 conda install -y -c dlr-sc freeimageplus=3.17.0 gl2ps=1.3.8 tbb=4.3.6
 conda install -y -c conda-forge freetype=2.7
-conda install -y -c pythonocc -c oce pythonocc-core python=3
+conda install -y -c pythonocc -c oce pythonocc-core=0.17.3 python=3
 ```
 
 ## WebViewer Preview 
