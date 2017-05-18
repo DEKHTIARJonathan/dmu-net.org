@@ -26,7 +26,7 @@ The Repository is organised as followed:
 2. Comment the line *Deny from All* in **install/.htaccess**.
 3. Go to the http://server-adress.tld/install/ - The website database is now installed.
 4. Recomment the line *Deny from All* in **install/.htaccess** or **delete the folder install/**.
-5. Use the batch script available here](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter) to convert a few CAD Models into ThreeJS JSON Files.
+5. Use the batch script [available here](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter) to convert a few CAD Models into ThreeJS JSON Files.
     1. Copy the file **generation.csv** into the folder **data_loader/** of the dmu-net website.
     2. Copy the all the folders generated in **output/** into the folder **dataset/** of the dmu-net website.
 6. Comment the line *Deny from All* in **data_loader/.htaccess**.
