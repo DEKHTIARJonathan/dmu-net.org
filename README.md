@@ -8,6 +8,32 @@ Official Repository for the website https://www.dmu-net.org
 - Branch **[Master](https://github.com/DEKHTIARJonathan/dmu-net.org)**: The DMU-Net website
 - Branch **[STEP-2-ThreeJS-BatchConverter](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter)**: The batch script used to convert STEP Files to ThreeJS readable files.
 
+## Branch Description
+
+This branch contain the source code which run the website: https://www.dmu-net.org
+
+The Repository is organised as followed:
+
+- **css**: contains all the CSS Files necessary for the projects.
+- **js**: contains all the Javascript Files necessary for the projects.
+- **data_loader**: contains the files used to load the database.
+- **dataset**: contains all the CAD Models converted in ThreeJS readable format.
+- **img**: contains all the Images necessary for the projects.
+- **parts**: contains php files that are shared and used by many files.
+
+## Installation
+1. Rename the file: **config.dist.php** to **config.php** and update the file with the correct settings in order to allow database connection.
+2. Comment the line *Deny from All* in **install/.htaccess**.
+3. Go to the http://server-adress.tld/install/ - The website database is now installed.
+4. Recomment the line *Deny from All* in **install/.htaccess** or **delete the folder install/**.
+5. Use the batch script available here](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter) to convert a few CAD Models into ThreeJS JSON Files.
+    1. Copy the file **generation.csv** into the folder **data_loader/** of the dmu-net website.
+    2. Copy the all the folders generated in **output/** into the folder **dataset/** of the dmu-net website.
+6. Comment the line *Deny from All* in **data_loader/.htaccess**.
+7. Go to the http://server-adress.tld/data_loader/ - The CAD Models are now in the database.
+8. Recomment the line *Deny from All* in **data_loader/.htaccess** or **delete the folder data_loader/**.
+
+
 ## Cite This Work
 *DEKHTIAR Jonathan, DURUPT Alexandre, BRICOGNE Matthieu, EYNARD Benoit, ROWSON Harvey and KIRITSIS Dimitris* (2017). <br>
 Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunities and Case Study.
