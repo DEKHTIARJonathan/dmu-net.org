@@ -16,7 +16,7 @@
 *******************************************************************
 
  2017 May 17
- 
+
  In place of a legal notice, here is a blessing:
 
     May you do good and not evil.
@@ -45,12 +45,7 @@
         <meta Http-Equiv="Cache" content="no-cache">
         <meta Http-Equiv="Pragma-Control" content="no-cache">
         <meta Http-Equiv="Cache-directive" Content="no-cache">
-        <meta Http-Equiv="Pragma-directive" Content="no-cache">
-        <meta Http-Equiv="Cache-Control" Content="no-cache">
-        <meta Http-Equiv="Pragma" Content="no-cache">
         <meta Http-Equiv="Expires" Content="0">
-        <meta Http-Equiv="Pragma-directive: no-cache">
-        <meta Http-Equiv="Cache-directive: no-cache">
 
         <style type="text/css">
             body {
@@ -58,6 +53,7 @@
                 margin: 0px;
                 overflow: hidden;
             }
+
             #info {
                 position: absolute;
                 top: 96%;
@@ -69,6 +65,7 @@
                 text-align: right;
                 opacity: 1;
                 }
+
             #pythonocc_rocks {
                 padding: 5px;
                 position: absolute;
@@ -94,9 +91,7 @@
             a:hover {
                 color: #ffffff;
             }
-        </style>
-        <!-- CSS For Page Loader -->
-        <style>
+
             #loader {
               position: absolute;
               left: 50%;
@@ -113,12 +108,12 @@
               -webkit-animation: rotate 2s linear infinite;
               animation: rotate 2s linear infinite;
             }
-            
+
             @keyframes rotate {
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
-            
+
             @-webkit-keyframes rotate  {
                 0% { -webkit-transform: rotate(0deg); }
                 100% { -webkit-transform: rotate(360deg); }
@@ -138,17 +133,61 @@
                 0% {transform: rotate(0deg);}
                 100% {transform: rotate(360deg);}
             }
+
+            #myProgress {
+                width: 100%;
+                background-color: grey;
+                margin-top: 50vh;
+                transform: translateY(-50%);
+            }
+            #myBar {
+                width: 1%;
+                height: 30px;
+                background-color: green;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+            }
+            #progress_mask {
+                width: 100vw;
+                height: 100vh;
+                background-color: white;
+                z-index: 9999;
+            }
         </style>
     </head>
 
     <body onload="removePreloader()">
         <div id="loader"></div>
+        <div id="progress_mask" style="display:none;"><div id="myProgress"><div id="myBar">0%</div></div></div>
         <div id="container" style="display:none;"></div>
-        
+
         <script>
+            /* Function removing the page loader */
             function removePreloader() {
-              document.getElementById("loader").style.display = "none";
-              document.getElementById("container").style.display = "block";
+              var el = document.getElementById("loader");
+              el.parentNode.removeChild( el );
+
+              document.getElementById("progress_mask").style.display = "block";
+            }
+
+            /* Moving the progress bar of the CAD model */
+
+            function updateProgressBar(progress){
+
+                var elem = document.getElementById("myBar");
+                var progress = parseInt(progress);
+
+                console.log( progress + '% loaded' );
+
+                if (progress >= 100) {
+                    var el = document.getElementById("progress_mask");
+                    el.parentNode.removeChild( el );
+                    document.getElementById("container").style.display = "block";
+                } else {
+                    elem.style.width = progress + '%';
+                    elem.innerHTML = progress * 1  + '%';
+                }
             }
         </script>
 
@@ -173,22 +212,22 @@
             var moveUp = false;
             var moveDown = false;
             var windowHalfX = window.innerWidth / 2;
-            var windowHalfY = window.innerHeight / 2;        
+            var windowHalfY = window.innerHeight / 2;
 
             init();
             animate();
-        
+
             function init() {
                 console.log("script init ...");
-                
+
                 container = document.createElement( 'div' );
                 document.body.appendChild( container );
-                
+
                 camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.001, 99999 );
-                
+
                 controls = new THREE.OrbitControls( camera );
                 controls.addEventListener( 'change', light_update );
-                
+
                 scene = new THREE.Scene();
                 scene.add( new THREE.AmbientLight(0x101010));
                 directionalLight = new THREE.DirectionalLight( 0xBDBDBD );
@@ -196,13 +235,13 @@
                 scene.add( directionalLight );
                 light1 = new THREE.PointLight( 0xffffff );
                 scene.add( light1 );
-                
+
                 phong_material = new THREE.MeshPhongMaterial( {
                     color: 0x6E6E6C,
                     specular: 0x555555,
                     shininess: 10
                 });
-                
+
                 var loader = new THREE.BufferGeometryLoader();
 
                 // load a resource
@@ -213,7 +252,7 @@
                     function ( geometry ) {
                         object = new THREE.Mesh(geometry , phong_material);
                         object.overdraw = true;
-                        
+
                         geometry.center();
                         geometry.computeBoundingSphere();
                         radius = geometry.boundingSphere.radius;
@@ -221,33 +260,31 @@
                         distanceFactor = Math.abs( aspect * radius / Math.sin( camera.fov/2 ));
 
                         camera.position.set( 0, 0, distanceFactor/5 );
-                        
+
                         scene.add( object );
-                       
-                        console.log("loaded !");
                     },
                     // Function called when download progresses
                     function ( xhr ) {
-                        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+                        updateProgressBar(xhr.loaded / xhr.total * 100);
                     },
                     // Function called when download errors
                     function ( xhr ) {
                         console.log( 'An error happened' );
                     }
                 );
-                
+
                 renderer = new THREE.WebGLRenderer({antialias:true});
                 renderer.setClearColor("#ffffff");
                 renderer.setSize( window.innerWidth, window.innerHeight );
                 container.appendChild( renderer.domElement );
-                
+
                 stats = new Stats();
                 stats.domElement.style.position = 'absolute';
                 stats.domElement.style.top = '0px';
                 container.appendChild( stats.domElement );
                 window.addEventListener( 'resize', onWindowResize, false );
             }
-            
+
             function animate() {
                 requestAnimationFrame( animate );
                 controls.update();
