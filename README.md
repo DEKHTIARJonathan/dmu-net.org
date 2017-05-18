@@ -25,6 +25,7 @@ conda install -y -c pythonocc -c oce pythonocc-core python=3
 
 ## WebViewer Preview 
 
+The results can be previewed with the webpage available under the **web/** folder. It should work perfectly when served from a webserver with any modern web browser. However, it might not work locally with Google Chrome due to Cross Origin Policies. We recommend using Mozilla Firefox, when used locally.
 
 ## Launch the batch processing
 
@@ -100,3 +101,7 @@ Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunit
 * **Benoit EYNARD:** [benoit.eynard@utc.fr](mailto:benoit.eynard@utc.fr)
 * **Harvey ROWSON:** [rowson@deltacad.fr](mailto:rowson@deltacad.fr)
 * **Dimitris KIRITSIS:** [dimitris.kiritsis@epfl.ch](mailto:dimitris.kiritsis@epfl.ch)
+
+## Special Acknowledgement
+
+This work has been possible thanks to the support of [Thomas Paviot - @tpaviot](https://github.com/tpaviot) and his wonderful Python Library [PythonOCC](https://github.com/tpaviot/pythonocc-core).
