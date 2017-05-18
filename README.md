@@ -4,6 +4,10 @@
 
 Official Repository for the website https://www.dmu-net.org
 
+## Project Architecture
+- Branch **[Master](https://github.com/DEKHTIARJonathan/dmu-net.org)**: The DMU-Net website
+- Branch **[STEP-2-ThreeJS-BatchConverter](https://github.com/DEKHTIARJonathan/dmu-net.org/tree/STEP-2-ThreeJS-BatchConverter)**: The batch script used to convert STEP Files to ThreeJS readable files.
+
 ## Cite This Work
 *DEKHTIAR Jonathan, DURUPT Alexandre, BRICOGNE Matthieu, EYNARD Benoit, ROWSON Harvey and KIRITSIS Dimitris* (2017). <br>
 Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunities and Case Study.
