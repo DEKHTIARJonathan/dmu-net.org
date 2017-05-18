@@ -29,6 +29,7 @@ conda install -y -c pythonocc -c oce pythonocc-core python=3
 ## Launch the batch processing
 
 1. Add some STEP files in the folder converter/data following the given organisation
+```
 ├── converter
 |   ├── data
 |       ├── ClassNameA
@@ -48,7 +49,7 @@ conda install -y -c pythonocc -c oce pythonocc-core python=3
 |           ├── random_name_01.step
 |           ├── ...
 |           └── random_name_0x.step
-
+```
 2. Execute the given command in a command prompt located in the folder **converter**: `python batch_processing.py`
 3. Launch the conversion by following the given screenshot:
 ![Batch Converter Screenshot - Launch Command](/app_screenshot.jpg?raw=true "Application Screenshot")
