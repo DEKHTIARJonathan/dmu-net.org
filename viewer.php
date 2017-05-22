@@ -239,8 +239,11 @@
                 phong_material = new THREE.MeshPhongMaterial( {
                     color: 0x6E6E6C,
                     specular: 0x555555,
-                    shininess: 10
+                    shininess: 5,
+                    precision: "highp",
+                    depthWrite: true,
                 });
+                
 
                 var loader = new THREE.BufferGeometryLoader();
 

@@ -56,16 +56,19 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta Http-Equiv="Cache" content="no-cache">
+        
         <meta Http-Equiv="Pragma-Control" content="no-cache">
-        <meta Http-Equiv="Cache-directive" Content="no-cache">
-        <meta Http-Equiv="Pragma-directive" Content="no-cache">
         <meta Http-Equiv="Cache-Control" Content="no-cache">
-        <meta Http-Equiv="Pragma" Content="no-cache">
-        <meta Http-Equiv="Expires" Content="0">
-        <meta Http-Equiv="Pragma-directive: no-cache">
+     
+        <meta Http-Equiv="Cache-directive" Content="no-cache">
         <meta Http-Equiv="Cache-directive: no-cache">
+        
+        <meta Http-Equiv="Pragma-directive" Content="no-cache">
+        <meta Http-Equiv="Pragma-directive: no-cache">
+        
+        <meta Http-Equiv="Pragma" Content="no-cache">
+        <meta Http-Equiv="Cache" content="no-cache">
+        <meta Http-Equiv="Expires" Content="0">
 
         <title>DMU-Net Dataset</title>
 
