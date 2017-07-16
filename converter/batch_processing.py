@@ -42,6 +42,13 @@ from OCC.TopoDS import TopoDS_Shape
 from OCC.Display.WebGl import threejs_renderer
 from OCC.Visualization import Tesselator
 
+import logging
+
+# création de l'objet logger qui va nous servir à écrire dans les logs
+log = logging.getLogger(__name__)
+# on met le niveau du logger à ERROR, comme ça il n'écrit que les erreurs importantes
+log.setLevel(logging.ERROR)
+
 # ################################################################################
 # ====================== File/Folder Manipulation Functions ======================
 # ################################################################################
@@ -119,6 +126,7 @@ class DMUNet_Parser:
         
         self._add_menu('DMU-Net')
         self._add_function_to_menu('DMU-Net', self.batch_processing)
+        self._add_function_to_menu('DMU-Net', self.process_first_class)
         self._add_function_to_menu('DMU-Net', self.close_program)
         
         self._set_background_color(255,255,255)
@@ -349,10 +357,11 @@ class DMUNet_Parser:
             self._outputFolder  = None
             self._shape         = None
             self._tess          = None
+            
+    def process_first_class(self):
+        self.batch_processing(convert_only_first_folder = True)
                 
-    def batch_processing(self): 
-
-        result_arr        = []
+    def batch_processing(self, convert_only_first_folder = False): 
         
         input_directory   = "data"
         output_directory  = "output"
@@ -370,6 +379,14 @@ class DMUNet_Parser:
         ### Removing CSV Output File
         if clean_outCSV:
             silentRemove(output_CSVFile) 
+            
+        # ====================== CREATING OUTPUT CSV FILE ======================
+                
+        keys = ["idPart", "name", "original_partName", "format", "category"]
+        
+        with open(output_CSVFile, 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
+            writer.writeheader()
             
         # ========================= BATCH PROCESSING ===========================
         
@@ -400,21 +417,19 @@ class DMUNet_Parser:
                 print(self._createRsltDict(d, model_file, generated_name, file_extension[1:]))
                 
                 #_createRsltDict(self, category, original_partname, partname, format)
-                result_arr.append(self._createRsltDict(
+                result_arr = self._createRsltDict(
                     d, #category
                     model_file, #original_partname
                     generated_name, #partname
                     file_extension[1:] #format
-                ))
-    
-        # ######### Output Results to CSV #########
-        keys = result_arr[0].keys()
+                )
         
-        with open(output_CSVFile, 'w') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
-            writer.writeheader()
-            writer.writerows(result_arr)
-
+                with open(output_CSVFile, 'a') as csvfile:
+                    writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
+                    writer.writerow(result_arr)
+            
+            if (convert_only_first_folder):
+                break
 # ================================================================================
 # =========================== Model-Processing Methods ===========================
 # ================================================================================      
