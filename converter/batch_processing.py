@@ -42,6 +42,12 @@ from OCC.TopoDS import TopoDS_Shape
 from OCC.Display.WebGl import threejs_renderer
 from OCC.Visualization import Tesselator
 
+# ========== PyQt - Window ================
+
+from PyQt5 import QtGui, QtWidgets, QtCore
+
+# ========== Logging ============
+
 import logging
 
 # création de l'objet logger qui va nous servir à écrire dans les logs
@@ -132,6 +138,22 @@ class DMUNet_Parser:
         self._set_background_color(255,255,255)
         self._display.View.TriedronErase()
         
+        
+        ########
+        
+        app = QtWidgets.QApplication.instance()
+        
+        if not app:  # create QApplication if it doesnt exist
+            raise Exception("QApplication does not exist")
+        
+        app_icon = QtGui.QIcon()
+        app_icon.addFile('icons/16x16.png', QtCore.QSize(16,16))
+        app_icon.addFile('icons/24x24.png', QtCore.QSize(24,24))
+        app_icon.addFile('icons/32x32.png', QtCore.QSize(32,32))
+        app_icon.addFile('icons/48x48.png', QtCore.QSize(48,48))
+        app_icon.addFile('icons/256x256.png', QtCore.QSize(256,256))
+        app.setWindowIcon(app_icon)
+               
         # =============================== Start Display ==============================         
         self._start_display()
     
@@ -202,7 +224,7 @@ class DMUNet_Parser:
             extension = extension.lower()
             
             if extension in ["png", "bmp", "jpeg", "tiff"] and self._check_outDir("_take_screenshot"):                
-                self._display.View.Dump(self._outputFolder + '/' + outname + '.' + extension)
+                self._display.View.Dump(os.path.join(self._outputFolder, outname + '.' + extension))
                 return True
                 
             else:
@@ -307,8 +329,13 @@ class DMUNet_Parser:
                 self._tess.Compute(uv_coords=False, compute_edges=False, mesh_quality=50)
                 
             #self._tess.ExportShapeToThreejs(self._outputFolder + '/' + outname)
-            with open(self._outputFolder + '/' + outname, "w") as text_file:
-                text_file.write(self._tess.ExportShapeToThreejsJSONString(self._inputFile))
+            with open(os.path.join(self._outputFolder, outname), "w") as text_file:
+                json_shape = self._tess.ExportShapeToThreejsJSONString(self._inputFile)
+                
+                json_shape = json_shape.replace("data\\", "data/")
+                json_shape = json_shape.replace("\\step_postprocessed\\", "/step_postprocessed/")
+                
+                text_file.write(json_shape)
                 
     def _exportX3D(self, outname="shape.x3dom"):
         if self._check_shape("_exportX3D") and self._check_outDir("_exportX3D"):
@@ -317,14 +344,14 @@ class DMUNet_Parser:
                 self._tess = Tesselator(self._shape)
                 self._tess.Compute(uv_coords=False, compute_edges=False, mesh_quality=50)
                 
-            self._tess.ExportShapeToX3D(self._outputFolder + '/' + outname)
+            self._tess.ExportShapeToX3D(os.path.join(self._outputFolder, outname))
         
     def _copy_model_to_outdir(self, outname="part"):
         if self._check_inputFile("_copy_model_to_outdir") and self._check_outDir("_copy_model_to_outdir"):
             filename, file_extension = os.path.splitext(self._inputFile)
                 
             if file_extension in ['.stl', '.step', '.stp']:
-                copyfile(self._inputFile, self._outputFolder + '/'  + outname + file_extension)
+                copyfile(self._inputFile, os.path.join(self._outputFolder, outname + file_extension))
 
             else:
                 raise Exception("File Extension not supported: " + file_extension)
@@ -365,36 +392,46 @@ class DMUNet_Parser:
         
         input_directory   = "data"
         output_directory  = "output"
-        output_CSVFile    = "generation.csv"
-        
-        clean_outDir      = True
-        clean_outCSV      = True
+        output_CSVFile    = "total.csv"
                 
         # ========================== CLEANING STEP ============================
         
         ### Removing Output Directory
-        if clean_outDir:
-            delete_directory(output_directory)
-
-        ### Removing CSV Output File
-        if clean_outCSV:
-            silentRemove(output_CSVFile) 
+        delete_directory(output_directory)       
             
-        # ====================== CREATING OUTPUT CSV FILE ======================
-                
+        # ========================= BATCH PROCESSING ===========================
+        
         keys = ["idPart", "name", "original_partName", "format", "category"]
+            
+        ### Removing CSV Output File
+        silentRemove(output_CSVFile) 
         
         with open(output_CSVFile, 'w') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
-            writer.writeheader()
-            
-        # ========================= BATCH PROCESSING ===========================
+            writer.writeheader() 
         
         subDirs = getDirs(input_directory)
 
         for d in subDirs :
         
-            files = getFiles(input_directory + "/" + d)
+            ##### Creating CSV File for Outputs
+            
+            class_CSVFile = d.lower() + ".csv"
+            
+            ### Removing CSV Output File
+            silentRemove(class_CSVFile) 
+            
+            ### Adding headers to the CSV File
+        
+            with open(class_CSVFile, 'w') as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
+                writer.writeheader()
+                
+            ### Getting all the files for a given class
+            
+            models_path = os.path.join(input_directory, d, "step_postprocessed")
+            
+            files = getFiles(models_path)
             
             for model_file in files :
             
@@ -405,24 +442,27 @@ class DMUNet_Parser:
         
                 while (True):
                     generated_name = id_generator()
-                    out_processing_dir = output_directory + "/" + generated_name
+                    out_processing_dir = os.path.join(output_directory, d, generated_name)
                     
                     if not os.path.exists(out_processing_dir):
                         break
                 
-                model_path = input_directory + "/" + d + "/" + model_file
+                model_path = os.path.join(models_path, model_file)
                 print (model_path)
                 self._model_processing(model_path, out_processing_dir)
                 
                 print(self._createRsltDict(d, model_file, generated_name, file_extension[1:]))
                 
-                #_createRsltDict(self, category, original_partname, partname, format)
                 result_arr = self._createRsltDict(
                     d, #category
                     model_file, #original_partname
                     generated_name, #partname
                     file_extension[1:] #format
                 )
+        
+                with open(class_CSVFile, 'a') as csvfile:
+                    writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
+                    writer.writerow(result_arr)
         
                 with open(output_CSVFile, 'a') as csvfile:
                     writer = csv.DictWriter(csvfile, fieldnames=keys, lineterminator='\n', quoting=csv.QUOTE_NONE)
