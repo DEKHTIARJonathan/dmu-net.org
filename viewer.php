@@ -223,7 +223,7 @@
                 container = document.createElement( 'div' );
                 document.body.appendChild( container );
 
-                camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.001, 99999 );
+                camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 99999 );
 
                 controls = new THREE.OrbitControls( camera );
                 controls.addEventListener( 'change', light_update );

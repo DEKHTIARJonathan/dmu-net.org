@@ -88,20 +88,19 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="3D-visualiser" tabindex="-1" role="dialog" aria-labelledby="3D-visualiserLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="3D-visualiserLabel">3D Model Visualiser</h4>
-          </div>
-          <div class="modal-body" id="3D-Viz-Body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+    <div class="modal fade" id="3D-visualiser" tabindex="-1" role="dialog" aria-labelledby="3D-visualiserLabel" style="z-index:1200">
+        <div class="modal-dialog modal-lg" role="document" style="width: calc(100vw - 50px);">
+            <div class="modal-content" style="height: calc(100vh - 50px);">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="3D-visualiserLabel">3D Model Visualiser</h4>
+                </div>
+                <div class="modal-body" id="3D-Viz-Body" style="height: calc(100% - 130px);"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <?php

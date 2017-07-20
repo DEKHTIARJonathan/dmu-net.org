@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     $('.part-category').on('click', function() {
-        //alert();
+        
         var category = $(this).data('category');
         var req_url = "/getPartsByCat.php";
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
         $(".thumbnail").on( "click", function() {
             $("#3D-visualiser").modal('show');
             var name = $(this).data("name");
-            $("#3D-Viz-Body").html("<iframe src='/viewer.php?part_name="+name+"' style='width: 100%; height: 400px;'></iframe>")
+            $("#3D-Viz-Body").html("<iframe src='/viewerV2.php?part_name="+name+"' style='width: 100%; height: 100%;'></iframe>")
         });
     }
 });
