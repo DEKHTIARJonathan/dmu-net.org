@@ -91,10 +91,10 @@
 
         <section id="why" class="features section" style="padding:0px;">
             <div class="container">
-                <h3>Does DMU-Net own the CAD Models ? Can I download them ?</h3>
+                <h3>Do we own the CAD Models inside DMU-Net? Can I download them ?</h3>
 
                 <p style="padding:20px 0px;">
-                    No, DMU-Net does not own the copyright of the CAD Models. DMU-Net only provides thumbnails and 3D WebGL rendering of the CAD Models. The STEP CAD Models are available for researchers and educators who wish to use the images for non-commercial research and/or educational purposes, we can provide access through our site under certain conditions and terms.
+                   We do not own the copyright of the CAD Models.  The STEP CAD Models are available for researchers and educators who wish to use the images for non-commercial research and/or educational purposes, we can provide access through our site under only this conditions and terms.
                 </p>
 
             </div>
