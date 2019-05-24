@@ -208,7 +208,7 @@
                     el.parentNode.removeChild( el );
 
                     document.getElementById("progress_mask").style.display = "block";
-                }, 2000);
+                }, 0);
             }
 
             /* Moving the progress bar of the CAD model */
