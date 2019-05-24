@@ -93,16 +93,20 @@
                 </p>
 
                 <pre style="margin-bottom:30px;">@article {DEKHTIAR2017:DMUNet,
-    author = {DEKHTIAR, Jonathan and DURUPT, Alexandre and BRICOGNE, Matthieu and EYNARD, Benoit and ROWSON, Harvey and KIRITSIS, Dimitris},
-    title  = {Deep Machine Learning for Big Data Engineering Applications - Survey, Opportunities and Case Study},
-    month  = {jan},
-    year   = {2017}
+    title   = {Deep learning for big data applications in CAD and PLM – Research review, opportunities and case study},
+    author  = {Jonathan Dekhtiar and Alexandre Durupt and Matthieu Bricogne and Benoit Eynard and Harvey Rowson and Dimitris Kiritsis},
+    journal = {Computers in Industry},
+    volume  = {100},
+    pages   = {227 - 243},
+    year    = {2018},
+    issn    = {0166-3615},
+    doi     = {https://doi.org/10.1016/j.compind.2018.04.005},
+    url     = {http://www.sciencedirect.com/science/article/pii/S0166361517305560}
 }</pre>
                 <p>
                   Links :
-                    <a href="#" data-toggle="modal" data-target="#publicationOfflineModal">Publication</a> |
-                    <a href="#" data-toggle="modal" data-target="#publicationOfflineModal">Bibtex</a> |
-                    <a href="#" data-toggle="modal" data-target="#publicationOfflineModal">pre-print on arxiv.org</a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0166361517305560" target="_blank">Publication</a> |
+                    <a href="https://www.sciencedirect.com/sdfe/arp/cite?pii=S0166361517305560&format=text%2Fx-bibtex&withabstract=true" target="_blank">Bibtex</a>
                 </p>
             </div>
         </section><!-- citation -->
