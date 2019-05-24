@@ -175,22 +175,48 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">We are sorry, we can't provide you the resource yet ...</h4>
+                        <h4 class="modal-title">DMU-Net dataset download.</h4>
                     </div>
                     <div class="modal-body">
-                        We are sorry, the paper and dataset related to this study are not available yet.<br><br>
+                        
+                        <div>
+                            The DMU-Net dataset is available for download in the following formats: OBJ, STL, ThreeJS, STEP and JT.<br><br>
 
-                        The preprint version will be available on <a href="https://arxiv.org/" target="_blank">ArXiV.org</a> platform soon.<br>
-                        The final version of this study will be published in <b>open access</b> if it is accepted through peer reviewing.<br><br>
+                            The dataset is available for <b>non-commercial research objectives only</b>. The 3D models are the sole property of their respective authors on GrabCAD.com platform.<br><br>
+                            
+                            <u>Download Links:</u>
+                             <ul style="padding-left:40px; padding-top:15px;">
+                                <li style="list-style-type:disc; padding-bottom:0.6em">OBJ Format: <a href="/zip_files/DMUNet_OBJ_format.zip" target="_blank">Download ZIP file</a></li>
+                                <li style="list-style-type:disc; padding-bottom:0.6em">STL Format: <a href="/zip_files/DMUNet_STL_format.zip" target="_blank">Download ZIP file</a></li>
+                                <li style="list-style-type:disc; padding-bottom:0.6em">ThreeJS Format: <a href="/zip_files/DMUNet_ThreeJS_format.zip" target="_blank">Download ZIP file</a></li>
+                                <li style="list-style-type:disc; padding-bottom:0.6em">STEP Format: <a href="/zip_files/DMUNet_STEP_format.zip" target="_blank">Download ZIP file</a></li>
+                                <li style="list-style-type:disc;">JT Format: <a href="/zip_files/DMUNet_JT_format.zip" target="_blank">Download ZIP file</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="padding-top:35px">
+                            <u>If you use this dataset, please cite our work in your publication:</u><br><br>
+                            <pre style="margin-bottom:30px;">@article {DEKHTIAR2017:DMUNet,
+    title   = {Deep learning for big data applications in CAD and PLM – Research review, opportunities and case study},
+    author  = {Jonathan Dekhtiar and Alexandre Durupt and Matthieu Bricogne and Benoit Eynard and Harvey Rowson and Dimitris Kiritsis},
+    journal = {Computers in Industry},
+    volume  = {100},
+    pages   = {227 - 243},
+    year    = {2018},
+    issn    = {0166-3615},
+    doi     = {https://doi.org/10.1016/j.compind.2018.04.005},
+    url     = {http://www.sciencedirect.com/science/article/pii/S0166361517305560}
+}</pre>                        
+                        </div>
+                        
+                        <div style="padding-top:10px">
+                            <u>For any question or request, the authors can be contacted at the following addresses:</u><br><br>
 
-                        <b>The dataset can not be downloaded yet</b>, we are currently under an authorisation review process with our legal department.<br><br>
-
-                        For any question or request, the authors can be contacted at the following addresses:<br><br>
-
-                        <ul style="padding-left:40px;">
-                            <li style="list-style-type:disc;"><a href="mailto:jonathan.dekhtiar@utc.fr" target="_blank">jonathan.dekhtiar@utc.fr</a></li>
-                            <li style="list-style-type:disc;"><a href="mailto:alexandre.durupt@utc.fr" target="_blank">alexandre.durupt@utc.fr</a></li>
-                        </ul>
+                            <ul style="padding-left:40px;">
+                                <li style="list-style-type:disc; padding-bottom:0.6em"><a href="mailto:alexandre.durupt@utc.fr" target="_blank">alexandre.durupt@utc.fr</a></li>
+                                <li style="list-style-type:disc;"><a href="mailto:jonathan.dekhtiar@utc.fr" target="_blank">jonathan.dekhtiar@utc.fr</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
